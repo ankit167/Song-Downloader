@@ -72,10 +72,10 @@ def download_songs(song_list):
             getVars = {'q': parsed_song}
             url = search_url + urllib.parse.urlencode(getVars)
 
-            s_data = get_content(url)
-            download_url = base_url + URLParserHref.get_songs_page_url(s_data)
-            s_data = get_content(download_url)
-            song_download_url = URLParserHref.get_songs_url(s_data)
+            page = get_content(url)
+            download_url = base_url + URLParserHref.get_songs_page_url(page, song)
+            page = get_content(download_url)
+            song_download_url = URLParserHref.get_songs_url(page)
             print("Downloading %s ..." % song)
             spk.download(song_download_url, song)
             songs_download_count += 1
