@@ -8,4 +8,8 @@ def url_resolver(url):
     res = opener.open(response)
     return [res, res.geturl()]
 
+def trim(name):
+    return name.strip('\n').lower()
+
+
 
