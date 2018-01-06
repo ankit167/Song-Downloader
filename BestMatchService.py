@@ -7,7 +7,7 @@
 class BestMatchService:
 
     '''
-        This method is basic implementation of Lavenshtine-Distance
+        This method is basic implementation of Lavenshtein-Distance
         or simple the Edit-Distance between two strings.
         We return the most closest song as requested by the user.
 
@@ -24,7 +24,7 @@ class BestMatchService:
         for index in range(len(search_list)) :
             search_result = search_list[index]
             search_result_length = len(search_result)
-            lavenshtine_matrix = [[0 for x in range(song_length+1)] for x in range(search_result_length+1)]
+            lavenshtine_matrix = [[0 for x in range(song_length + 1)] for x in range(search_result_length + 1)]
 
             for i in range(search_result_length + 1):
                 for j in range(song_length + 1):
